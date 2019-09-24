@@ -6,7 +6,7 @@ namespace SkyForce.Enemy
 {
     public class EnemyModel
     {
-        public EnemyModel()
+        public EnemyModel(EnemyScriptables enemyScriptables)
         {
 
         }

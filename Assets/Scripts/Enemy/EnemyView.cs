@@ -1,4 +1,5 @@
 ﻿using SkyForce.Interfaces;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,7 +32,12 @@ namespace SkyForce.Enemy
         // Update is called once per frame
         void Update()
         {
+            MoveEnemy();
+        }
 
+        private void MoveEnemy()
+        {
+            throw new NotImplementedException();
         }
 
         #region call in controller functions 
