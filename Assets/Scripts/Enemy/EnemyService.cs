@@ -13,9 +13,26 @@ namespace SkyForce.Enemy
 
         #endregion
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                TestingEnemy();
+            }
+            
+        }
+
+        private void TestingEnemy()
+        {
+            EnemyModel enemyModel = SetModels(EnemyType.Enemytype0);
+            EnemyController controller = new EnemyController(enemyView, enemyModel);
+        }
+
         public EnemyController GetEnemyController(EnemyType enemyType)
         {
-            return null;
+            EnemyModel enemyModel = SetModels(enemyType);
+            EnemyController controller = new EnemyController(enemyView, enemyModel);
+            return controller;
         }
 
         public EnemyModel SetModels(EnemyType type)

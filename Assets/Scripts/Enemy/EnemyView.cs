@@ -20,25 +20,84 @@ namespace SkyForce.Enemy
         #region Declaration of variables
 
         private EnemyController enemyController;
+        Rigidbody2D rgbd2D;
+        Vector3 axisOfRoatation;
 
         #endregion
-
         // Start is called before the first frame update
         void Start()
         {
+            rgbd2D = GetComponent<Rigidbody2D>();
+            rgbd2D.gravityScale = enemyController.EnemyModelC.GravityScale;
+            if (enemyController.EnemyModelC.IsRotating)
+            {
+                SetRotationAxis();
+            }   
+        }
 
+        private void SetRotationAxis()
+        {
+            if (enemyController.EnemyModelC.RotateByAxisY)
+            {
+                axisOfRoatation = Vector3.up;
+            }
+            if (enemyController.EnemyModelC.RotateByAxisZ)
+            {
+                axisOfRoatation = Vector3.forward;
+            }
+            if (enemyController.EnemyModelC.RotateByAxisY && enemyController.EnemyModelC.RotateByAxisZ)
+            {
+                axisOfRoatation = new Vector3(0, 1, 1);
+            }
         }
 
         // Update is called once per frame
         void Update()
         {
-            MoveEnemy();
+            if(enemyController.EnemyModelC != null)
+            {
+                MoveEnemy();
+                RotateEnemy();
+            }
+            
         }
 
+        #region move enemy functions
         private void MoveEnemy()
         {
-            throw new NotImplementedException();
+            if (enemyController.EnemyModelC.ChangeMovement)
+            {
+                Vector2 moveToPos = SetMovementPos();
+                enemyController.EnemyModelC.MoveToLeftFirst = false;
+                rgbd2D.MovePosition(moveToPos);
+                
+            }
+            else
+            {
+                Vector2 moveToPos = new Vector2(transform.position.x, transform.position.y) - new Vector2(0, enemyController.EnemyModelC.Speed);
+                rgbd2D.MovePosition(moveToPos);
+            }
         }
+
+        private Vector2 SetMovementPos()
+        {
+            if (enemyController.EnemyModelC.MoveToLeftFirst)
+            {
+                return new Vector2(transform.position.x, transform.position.y) - new Vector2(enemyController.EnemyModelC.LeftOffsetValue, enemyController.EnemyModelC.Speed);
+            }
+            else
+            {
+                enemyController.EnemyModelC.MoveToLeftFirst = true;
+                return new Vector2(transform.position.x, transform.position.y) + new Vector2(enemyController.EnemyModelC.RightOffsetValue, enemyController.EnemyModelC.Speed);
+            }
+            
+        }
+
+        private void RotateEnemy()
+        {
+            transform.Rotate(Vector3.up,enemyController.EnemyModelC.RotateByAngleValue);
+        }
+        #endregion
 
         #region call in controller functions 
 

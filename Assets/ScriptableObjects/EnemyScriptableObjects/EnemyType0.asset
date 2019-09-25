@@ -15,9 +15,15 @@ MonoBehaviour:
   Type: 0
   IsShooting: 0
   ChangeMovement: 0
+  MoveToLeftFirst: 0
   LeftOffsetValue: 0
   RightOffsetValue: 0
-  IsRotating: 0
-  Speed: 10
+  SizeIncreaseDecrease: 0
+  IsRotating: 1
+  RotateByAngleValue: 0
+  RotateByAxisY: 0
+  RotateByAxisZ: 0
+  GravityScale: 0
+  Speed: 0.1
   CollideDamage: 10
   Health: 100
