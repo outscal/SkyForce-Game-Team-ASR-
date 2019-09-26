@@ -8,15 +8,13 @@ namespace SkyForce.Enemy
     {
         public EnemyView EnemyViewC { get; }
         public EnemyModel EnemyModelC { get; }
-
         public EnemyController(EnemyView enemyView,EnemyModel enemyModel)
         {
             EnemyViewC = GameObject.Instantiate<EnemyView>(enemyView);
             EnemyModelC = enemyModel;
             EnemyViewC.SetController(this);
         }
-
-       
+        
     }
 
 }

@@ -24,6 +24,7 @@ namespace SkyForce.Enemy
         Vector3 axisOfRoatation;
 
         #endregion
+
         // Start is called before the first frame update
         void Start()
         {
@@ -68,9 +69,9 @@ namespace SkyForce.Enemy
             if (enemyController.EnemyModelC.ChangeMovement)
             {
                 Vector2 moveToPos = SetMovementPos();
-                enemyController.EnemyModelC.MoveToLeftFirst = false;
                 rgbd2D.MovePosition(moveToPos);
-                
+                //rgbd2D.MovePosition(moveToPos * Time.deltaTime); crazy behaviour 
+
             }
             else
             {
@@ -83,6 +84,7 @@ namespace SkyForce.Enemy
         {
             if (enemyController.EnemyModelC.MoveToLeftFirst)
             {
+                enemyController.EnemyModelC.MoveToLeftFirst = false;
                 return new Vector2(transform.position.x, transform.position.y) - new Vector2(enemyController.EnemyModelC.LeftOffsetValue, enemyController.EnemyModelC.Speed);
             }
             else
@@ -95,7 +97,7 @@ namespace SkyForce.Enemy
 
         private void RotateEnemy()
         {
-            transform.Rotate(Vector3.up,enemyController.EnemyModelC.RotateByAngleValue);
+            transform.Rotate(axisOfRoatation,enemyController.EnemyModelC.RotateByAngleValue);
         }
         #endregion
 

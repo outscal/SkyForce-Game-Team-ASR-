@@ -1,26 +1,43 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyScriptables", menuName = "ScriptableObjects/EnemyScriptables/NewEnemyScriptableObject")]
+[Serializable]
 public class EnemyScriptables : ScriptableObject
 {
+    
+    [Header("Basic")]
+    [Space(2)]
     public EnemyType Type;
+    public float CollideDamage;
+    public float Health;
+    [Header("Shooting Enemy")]
+    [Space(2)]
     public bool IsShooting;
+    [Header("ChangeMovement")]
+    [Space(2)]
     public bool ChangeMovement;
     public bool MoveToLeftFirst;
-    [Range(0,1.5f)]
+    [Range(0,1)]
     public float LeftOffsetValue;
-    [Range(0, 1.5f)]
+    [Range(0, 1)]
     public float RightOffsetValue;
+    [Header("Size")]
+    [Space(2)]
     public bool SizeIncreaseDecrease;
+    [Header("Rotate")]
+    [Space(2)]
     public bool IsRotating;
     public float RotateByAngleValue;
     public bool RotateByAxisY;
     public bool RotateByAxisZ;
-    [Range(-1,1)]
+    [Header("GravityScale")]
+    [Space(2)]
+    [Range(-5,5)]
     public float GravityScale;
-    [Range(.1f, 2)]
+    [Header("Move Speed")]
+    [Range(0, 2)]
     public float Speed; 
-    public float CollideDamage;
-    public float Health;
+    
     
 }
