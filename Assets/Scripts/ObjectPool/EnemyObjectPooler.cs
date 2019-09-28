@@ -12,10 +12,12 @@ namespace SkyForce.ObjectPool
 
         public EnemyController GetEnemyController(EnemyView enemyView, EnemyModel enemyModel)
         {
-            this.EnemyView = enemyView;
-            this.EnemyModel = enemyModel;
+            EnemyView = enemyView;
+            EnemyModel = enemyModel;
             EnemyController enemyController =  GetPooledItem();
             enemyController.EnemyView.gameObject.SetActive(true);
+            enemyController.ResetModel();
+            enemyController.ResetPosition();
             return enemyController;
         }
 

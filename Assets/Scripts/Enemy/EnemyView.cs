@@ -21,12 +21,13 @@ namespace SkyForce.Enemy
         Rigidbody2D rgbd2D;
         Vector3 axisOfRoatation;
         float timer = 0;
-
+        //private EnemyModel Defaultmodel;
         #endregion
 
         // Start is called before the first frame update
         void Start()
         {
+            //Defaultmodel = enemyController.EnemyModel;
             rgbd2D = GetComponent<Rigidbody2D>();
             rgbd2D.gravityScale = enemyController.EnemyModel.GravityScale;
             if (enemyController.EnemyModel.IsRotating)

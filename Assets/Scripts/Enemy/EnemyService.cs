@@ -10,6 +10,8 @@ namespace SkyForce.Enemy
 
         public EnemyScriptablesList enemyScriptablesList;
         public EnemyView enemyView;
+        [HideInInspector]
+        public EnemyScriptables enemyScriptables;
 
         #endregion
 
@@ -37,8 +39,8 @@ namespace SkyForce.Enemy
 
         public EnemyModel GetEnemyModels(EnemyType type)
         {
-            EnemyScriptables enemy = Array.Find(enemyScriptablesList.EnemyArray, x => x.Type.Equals(type));
-            return new EnemyModel(enemy);
+            enemyScriptables = Array.Find(enemyScriptablesList.EnemyArray, x => x.Type.Equals(type));
+            return new EnemyModel(enemyScriptables);
         }
     }
 }
