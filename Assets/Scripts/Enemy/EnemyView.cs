@@ -1,7 +1,5 @@
 ﻿using SkyForce.Interfaces;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using SkyForce.ObjectPool;
 using UnityEngine;
 
 namespace SkyForce.Enemy
@@ -22,6 +20,7 @@ namespace SkyForce.Enemy
         private EnemyController enemyController;
         Rigidbody2D rgbd2D;
         Vector3 axisOfRoatation;
+        float timer = 0;
 
         #endregion
 
@@ -29,24 +28,24 @@ namespace SkyForce.Enemy
         void Start()
         {
             rgbd2D = GetComponent<Rigidbody2D>();
-            rgbd2D.gravityScale = enemyController.EnemyModelC.GravityScale;
-            if (enemyController.EnemyModelC.IsRotating)
+            rgbd2D.gravityScale = enemyController.EnemyModel.GravityScale;
+            if (enemyController.EnemyModel.IsRotating)
             {
-                SetRotationAxis();
+                SetRotationAxis();// convert to accept values  & make it virtual 
             }   
         }
 
         private void SetRotationAxis()
         {
-            if (enemyController.EnemyModelC.RotateByAxisY)
+            if (enemyController.EnemyModel.RotateByAxisY)
             {
                 axisOfRoatation = Vector3.up;
             }
-            if (enemyController.EnemyModelC.RotateByAxisZ)
+            if (enemyController.EnemyModel.RotateByAxisZ)
             {
                 axisOfRoatation = Vector3.forward;
             }
-            if (enemyController.EnemyModelC.RotateByAxisY && enemyController.EnemyModelC.RotateByAxisZ)
+            if (enemyController.EnemyModel.RotateByAxisY && enemyController.EnemyModel.RotateByAxisZ)
             {
                 axisOfRoatation = new Vector3(0, 1, 1);
             }
@@ -55,10 +54,21 @@ namespace SkyForce.Enemy
         // Update is called once per frame
         void Update()
         {
-            if(enemyController.EnemyModelC != null)
+            if(enemyController.EnemyModel != null)
             {
                 MoveEnemy();
                 RotateEnemy();
+            }
+            //Pool Test Code
+            if (timer >3)
+            {
+                EnemyObjectPooler.Instance.ReturnItemToPool(this.enemyController);
+                gameObject.SetActive(false);
+                timer = 0;
+            }
+            else
+            {
+                timer += Time.deltaTime;
             }
             
         }
@@ -66,7 +76,7 @@ namespace SkyForce.Enemy
         #region move enemy functions
         private void MoveEnemy()
         {
-            if (enemyController.EnemyModelC.ChangeMovement)
+            if (enemyController.EnemyModel.ChangeMovement)
             {
                 Vector2 moveToPos = SetMovementPos();
                 rgbd2D.MovePosition(moveToPos);
@@ -75,29 +85,29 @@ namespace SkyForce.Enemy
             }
             else
             {
-                Vector2 moveToPos = new Vector2(transform.position.x, transform.position.y) - new Vector2(0, enemyController.EnemyModelC.Speed);
+                Vector2 moveToPos = new Vector2(transform.position.x, transform.position.y) - new Vector2(0, enemyController.EnemyModel.Speed);
                 rgbd2D.MovePosition(moveToPos);
             }
         }
 
         private Vector2 SetMovementPos()
         {
-            if (enemyController.EnemyModelC.MoveToLeftFirst)
+            if (enemyController.EnemyModel.MoveToLeftFirst)
             {
-                enemyController.EnemyModelC.MoveToLeftFirst = false;
-                return new Vector2(transform.position.x, transform.position.y) - new Vector2(enemyController.EnemyModelC.LeftOffsetValue, enemyController.EnemyModelC.Speed);
+                enemyController.EnemyModel.MoveToLeftFirst = false;
+                return new Vector2(transform.position.x, transform.position.y) - new Vector2(enemyController.EnemyModel.LeftOffsetValue, enemyController.EnemyModel.Speed);
             }
             else
             {
-                enemyController.EnemyModelC.MoveToLeftFirst = true;
-                return new Vector2(transform.position.x, transform.position.y) + new Vector2(enemyController.EnemyModelC.RightOffsetValue, enemyController.EnemyModelC.Speed);
+                enemyController.EnemyModel.MoveToLeftFirst = true;
+                return new Vector2(transform.position.x, transform.position.y) + new Vector2(enemyController.EnemyModel.RightOffsetValue, enemyController.EnemyModel.Speed);
             }
             
         }
 
         private void RotateEnemy()
         {
-            transform.Rotate(axisOfRoatation,enemyController.EnemyModelC.RotateByAngleValue);
+            transform.Rotate(axisOfRoatation,enemyController.EnemyModel.RotateByAngleValue);
         }
         #endregion
 
@@ -110,6 +120,7 @@ namespace SkyForce.Enemy
 
         #endregion
     }
+
 
 
 }

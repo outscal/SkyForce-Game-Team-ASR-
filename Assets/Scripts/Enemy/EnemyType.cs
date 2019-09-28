@@ -1,6 +1,8 @@
 ﻿public enum EnemyType
 {
-    Enemytype0 = 0, //Rotates on y axis 
+    Enemytype0 = 0, //Basic Enemy Deals collision damage
     Enemytype1 = 1, // rotates on z axis
-    Enemytype2 = 2 // Moves in curve
+    Enemytype2 = 2, // Moves from left to right
+    Enemytype3 = 3,
+    Enemytype4 = 4
 }

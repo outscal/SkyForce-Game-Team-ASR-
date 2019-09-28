@@ -1,21 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SkyForce.Enemy
 {
     public class EnemyController
     {
-        public EnemyView EnemyViewC { get; }
-        public EnemyModel EnemyModelC { get; }
+        public EnemyView EnemyView { get; }
+        public EnemyModel EnemyModel { get; }
         public EnemyController(EnemyView enemyView,EnemyModel enemyModel)
         {
-            EnemyViewC = GameObject.Instantiate<EnemyView>(enemyView);
-            EnemyModelC = enemyModel;
-            EnemyViewC.SetController(this);
+            EnemyView = GameObject.Instantiate<EnemyView>(enemyView);
+            EnemyModel = enemyModel;
+            EnemyView.SetController(this);
         }
-        
-    }
 
+    }
+    
 }
 

@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using SkyForce.ObjectPool;
+using System;
 using UnityEngine;
 
 namespace SkyForce.Enemy
@@ -25,25 +24,20 @@ namespace SkyForce.Enemy
 
         private void TestingEnemy()
         {
-            EnemyModel enemyModel = SetModels(EnemyType.Enemytype2);
-            EnemyController controller = new EnemyController(enemyView, enemyModel);
+            EnemyModel enemyModel = GetEnemyModels(EnemyType.Enemytype3);
+            EnemyController controller = EnemyObjectPooler.Instance.GetComponent<EnemyObjectPooler>().GetEnemyController(enemyView, enemyModel);
         }
 
         public EnemyController GetEnemyController(EnemyType enemyType)
         {
-            EnemyModel enemyModel = SetModels(enemyType);
-            EnemyController controller = new EnemyController(enemyView, enemyModel);
+            EnemyModel enemyModel = GetEnemyModels(enemyType);
+            EnemyController controller = EnemyObjectPooler.Instance.GetComponent<EnemyObjectPooler>().GetEnemyController(enemyView, enemyModel);
             return controller;
         }
 
-        public EnemyModel SetModels(EnemyType type)
+        public EnemyModel GetEnemyModels(EnemyType type)
         {
-            //if (type == EnemyType.Enemytype0)
-            //{
-            //    return new EnemyModel(enemyScriptablesList.Enemy[0]);
-            //}
-            //EnemyScriptables enemy1 = Array.Find(enemyScriptablesList, x => x.Enemy.Type == type);
-            EnemyScriptables enemy = Array.Find(enemyScriptablesList.Enemy, x => x.Type.Equals(type));
+            EnemyScriptables enemy = Array.Find(enemyScriptablesList.EnemyArray, x => x.Type.Equals(type));
             return new EnemyModel(enemy);
         }
     }

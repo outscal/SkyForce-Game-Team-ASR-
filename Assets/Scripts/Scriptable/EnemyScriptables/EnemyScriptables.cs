@@ -4,8 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemyScriptables", menuName = "ScriptableObjects/EnemyScriptables/NewEnemyScriptableObject")]
 [Serializable]
 public class EnemyScriptables : ScriptableObject
-{
-    
+{   
     [Header("Basic")]
     [Space(2)]
     public EnemyType Type;
@@ -25,13 +24,12 @@ public class EnemyScriptables : ScriptableObject
     [Header("Size")]
     [Space(2)]
     public bool SizeIncreaseDecrease;
-    [Header("Rotate")]
     [Space(2)]
+    [Header("Rotate")]
     public bool IsRotating;
     public float RotateByAngleValue;
     public bool RotateByAxisY;
     public bool RotateByAxisZ;
-    [Header("GravityScale")]
     [Space(2)]
     [Range(-5,5)]
     public float GravityScale;
