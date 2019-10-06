@@ -20,29 +20,15 @@ public class PlayerView : MonoBehaviour
     {
         // playerController.ObjectBoundWithScreen();
         Debug.Log("uck");
-        // controllerInput.ReadInput();
-
-
-        //    if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
-        //    {
-        //        playerController.Move_Android();
-        //    }
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("Step 1");
-            controllerInput.ReadInput();
-            Debug.Log("Step 4");
-        }
-
-
-        //    playerController.Move_Editor();
-
+        controllerInput.ReadInput();
+        playerController.GetBullet();
     }
     public void Init(PlayerController activeController)
     {
         this.playerController = activeController;
     }
-    public void SetPosition(Vector3 newPosition){
+    public void SetPosition(Vector3 newPosition)
+    {
         transform.position = newPosition;
     }
 

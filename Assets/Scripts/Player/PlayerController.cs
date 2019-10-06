@@ -6,7 +6,8 @@ public class PlayerController
 {
     public PlayerView playerView;
     private PlayerModel playerModel;
-    
+    private BulletController bulletController;
+
     public PlayerController(PlayerModel playerModel, PlayerView playerView)
     {
         PlayerModel = playerModel;
@@ -37,5 +38,10 @@ public class PlayerController
                                  Mathf.Clamp(PlayerView.transform.position.y, -4.2f, 4.2f),
                                  PlayerView.transform.position.z);
         Debug.Log("Bound");
+    }
+    public void GetBullet()
+    {
+        Debug.Log("SpawnBullet");
+        bulletController = BulletService.Instance.SpawnBullet( PlayerView.transform.position + new Vector3(0f,1.7f,0f));
     }
 }

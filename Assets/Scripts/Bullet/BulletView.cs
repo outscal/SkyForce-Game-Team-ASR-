@@ -13,6 +13,6 @@ public class BulletView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(10,Time.deltaTime,0,0);
+        transform.Translate(0,1*Time.deltaTime,0);                                                                                                                                                                                                                                                                                                              
     }
 }
