@@ -26,7 +26,7 @@ namespace SkyForce.Enemy
 
         private void TestingEnemy()
         {
-            EnemyModel enemyModel = GetEnemyModels(EnemyType.Enemytype3);
+            EnemyModel enemyModel = GetEnemyModels(EnemyType.Enemytype4);
             EnemyController controller = EnemyObjectPooler.Instance.GetComponent<EnemyObjectPooler>().GetEnemyController(enemyView, enemyModel);
         }
 
