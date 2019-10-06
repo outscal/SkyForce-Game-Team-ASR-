@@ -6,6 +6,7 @@ public class PlayerController
 {
     public PlayerView playerView;
     private PlayerModel playerModel;
+    
     public PlayerController(PlayerModel playerModel, PlayerView playerView)
     {
         PlayerModel = playerModel;
@@ -14,14 +15,21 @@ public class PlayerController
         PlayerView.Init(this);
     }
     public PlayerModel PlayerModel { get; }
-    private PlayerView PlayerView { get; }
-
-    public void Move()
+    public PlayerView PlayerView { get; }
+    public void SetPosition(Vector3 newPosition)
     {
-        Vector2 TouchPosition = Input.GetTouch(0).deltaPosition;
-        PlayerView.transform.Translate(TouchPosition.x * playerModel.Speed * Time.deltaTime, TouchPosition.y * playerModel.Speed * Time.deltaTime, 0);
-        Debug.Log("Move");
+        PlayerView.SetPosition(newPosition);
     }
+
+    // public void Move_Android()
+    // {
+    //     Vector2 TouchPosition = Input.GetTouch(0).deltaPosition;
+    //     PlayerView.transform.Translate(TouchPosition.x * playerModel.Speed * Time.deltaTime, TouchPosition.y * playerModel.Speed * Time.deltaTime, 0);
+    //     Debug.Log("Move");
+    // }
+    // public void Move_Editor(){
+    //     Debug.Log("moving in editor");
+    // }
     public void ObjectBoundWithScreen()
     {
         Debug.Log("Call");
