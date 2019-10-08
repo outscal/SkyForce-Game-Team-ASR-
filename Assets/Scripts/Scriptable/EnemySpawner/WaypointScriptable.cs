@@ -3,5 +3,5 @@
 public class WaypointScriptable : ScriptableObject
 {
     public WaypointType WayType;
-    public Transform[] WayPositions;
+    public GameObject[] GameObjectsPos;
 }

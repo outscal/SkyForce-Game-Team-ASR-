@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4272f0569e0282049b822fbcdcc8b886, type: 3}
-  m_Name: SpawnScriptable
+  m_Script: {fileID: 11500000, guid: 4bc0f3134a455904b938bdc88530accb, type: 3}
+  m_Name: WaypointScriptable
   m_EditorClassIdentifier: 
-  EnemyTypeToSpawn: 0
-  WaypointToMove: 0
-  EnemyNumber: 0
-  TimeBetweenSpawns: 0
+  waypointScriptableArray:
+  - {fileID: 11400000, guid: 8f43fd6cbf831334990851732abd435f, type: 2}

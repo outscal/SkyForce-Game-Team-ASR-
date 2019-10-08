@@ -23,6 +23,10 @@ namespace SkyForce.Enemy
         {
             EnemyView.transform.position = SpawnPos;
         }
+        public void SetEnemyPos(Vector3 SetPosition)
+        {
+            EnemyView.transform.position = SetPosition;
+        }
     }
     
 }

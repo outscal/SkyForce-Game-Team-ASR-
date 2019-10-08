@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b55a7ddc580c9741a1a85ea0325fd74, type: 3}
+  m_Name: WayPointHorizontal
+  m_EditorClassIdentifier: 
+  WayType: 2
+  GameObjectsPos:
+  - {fileID: 6366035990798772054, guid: 7f120c9fd1d40f24d9200c14997385f8, type: 3}
+  - {fileID: 4058461645482691063, guid: 72450eecb190b364ab223560d27a50f0, type: 3}
+  - {fileID: 8142632569975446258, guid: 4a185332bf90b4046aa37513c7abefcb, type: 3}
+  - {fileID: 7479745292208275829, guid: 174be5eab83c3ee46b9c575e14e47d44, type: 3}
+  - {fileID: 6764041722080994939, guid: 037e7a00d5d199748a825a9f02abe742, type: 3}
+  - {fileID: 6790969302758586125, guid: 9ead3c75e3e3e5c4abd50dc5ec9031f0, type: 3}
+  - {fileID: 2925056759316124067, guid: 75d769d35f9fe4845b422280ad2c357a, type: 3}
