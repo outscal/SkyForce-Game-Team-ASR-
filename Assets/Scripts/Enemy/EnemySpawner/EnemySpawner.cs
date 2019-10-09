@@ -21,8 +21,9 @@ public class EnemySpawner : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if(collision.GetComponent<EnemyView>()!=null) 
         {
+            Debug.LogError(" * Change getcomponent to identify the player When integrated * ");
             StartSpawn = true;
         }
     }
@@ -31,7 +32,6 @@ public class EnemySpawner : MonoBehaviour
     {
         if (StartSpawn)
         {
-
             if (timer > enemySpawnScriptable.TimeBetweenSpawns)
             {
                 if(enemycount< enemySpawnScriptable.EnemyNumber)
