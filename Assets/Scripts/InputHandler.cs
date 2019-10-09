@@ -8,17 +8,18 @@ interface IInput
 #if UNITY_ANDROID
 public class InputHandler_Android : IInput
 {
-    public PlayerView playerView;
-    private PlayerModel playerModel;
+
     public void ReadInput()
     {
         if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
         {
         Vector2 TouchPosition = Input.GetTouch(0).deltaPosition;
         PlayerService.Instance.SetPosition(TouchPosition);
+        Debug.Log("Player Service");
+
+        }
     }
-    }
-}
+
 #endif
 #if UNITY_EDITOR
 public class InputHandler_Editor : IInput
@@ -32,6 +33,7 @@ public class InputHandler_Editor : IInput
         target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         target.z = 0f;
         PlayerService.Instance.SetPosition(target);
+        Debug.Log("Player Service");
         }
         
     }

@@ -12,17 +12,21 @@ public class PlayerView : MonoBehaviour
     {
 #if UNITY_EDITOR
         controllerInput = new InputHandler_Editor();
-#elif UNITY_ANDROID
-       controllerInput = new inputHandler_Android();
+#endif
+#if UNITY_ANDROID
+       controllerInput = new InputHandler_Android();
 #endif
     }
     void Update()
     {
-        // playerController.ObjectBoundWithScreen();
-        Debug.Log("uck");
+        
+        Debug.Log("Duck");
         controllerInput.ReadInput();
-        playerController.GetBullet();
+        playerController.GetBullet(); 
+        
+        
     }
+   
     public void Init(PlayerController activeController)
     {
         this.playerController = activeController;
@@ -31,5 +35,7 @@ public class PlayerView : MonoBehaviour
     {
         transform.position = newPosition;
     }
+    
+    
 
 }
