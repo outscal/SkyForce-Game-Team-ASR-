@@ -6,7 +6,7 @@ namespace SkyForce.Interfaces
 {
     public interface IDamagable
     {
-        void TakeDamage();
+        void TakeDamage(float damage);
     }
 }
 

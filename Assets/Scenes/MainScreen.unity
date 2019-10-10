@@ -298,6 +298,12 @@ MonoBehaviour:
   - SpawnLocation: {x: -1, y: 2, z: 0}
     EnemySpawnerGmo: {fileID: 7641733032148750334, guid: fd861ca52e0922e43b59da6819a62651,
       type: 3}
+  - SpawnLocation: {x: 1, y: 5, z: 0}
+    EnemySpawnerGmo: {fileID: 7641733032148750334, guid: fd861ca52e0922e43b59da6819a62651,
+      type: 3}
+  - SpawnLocation: {x: -1, y: 10, z: 0}
+    EnemySpawnerGmo: {fileID: 7641733032148750334, guid: fd861ca52e0922e43b59da6819a62651,
+      type: 3}
 --- !u!1 &860990847
 GameObject:
   m_ObjectHideFlags: 0
