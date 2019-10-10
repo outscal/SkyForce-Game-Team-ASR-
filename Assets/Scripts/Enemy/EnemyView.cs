@@ -6,14 +6,14 @@ namespace SkyForce.Enemy
 {
     public class EnemyView : MonoBehaviour,IDamagable
     {
-        #region Interface Imlementation
-
-        public void TakeDamage()
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            throw new System.NotImplementedException();
+            IDamagable Collobj = collision.GetComponent<IDamagable>();
+            if (Collobj != null)
+            {
+                Collobj.TakeDamage(enemyController.EnemyModel.CollideDamage);
+            }
         }
-
-        #endregion
 
         #region Declaration of variables
 
@@ -24,6 +24,10 @@ namespace SkyForce.Enemy
         //private EnemyModel Defaultmodel;
         #endregion
 
+        public void TakeDamage(float damage)
+        {
+            enemyController.ApplyDamage(damage);
+        }
         // Start is called before the first frame update
         void Start()
         {
@@ -121,7 +125,5 @@ namespace SkyForce.Enemy
 
         #endregion
     }
-
-
 
 }

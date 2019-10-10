@@ -1,8 +1,10 @@
 ﻿public enum EnemyType
 {
-    Enemytype0 = 0, //Basic Enemy Deals collision damage
-    Enemytype1 = 1, // rotates on z axis
-    Enemytype2 = 2, // Moves from left to right
-    Enemytype3 = 3,
-    Enemytype4 = 4
+    BasicEnemy0 = 0, //Basic Enemy Deals collision damage
+    EnemyRotZ1 = 1, // rotates on z axis
+    EnemyOscillating2 = 2, // Moves from left to right
+    EnemyRotY3 = 3, // rot on y axis
+    OneHitKO4 = 4 ,// 1 hit ko enemy
+    ShootingEnemy = 5
+        
 }

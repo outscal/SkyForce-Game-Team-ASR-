@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SkyForce.ObjectPool;
+using UnityEngine;
 
 namespace SkyForce.Enemy
 {
@@ -22,6 +23,22 @@ namespace SkyForce.Enemy
         public void ResetPosition()
         {
             EnemyView.transform.position = SpawnPos;
+        }
+        public void SetEnemyPos(Vector3 SetPosition)
+        {
+            EnemyView.transform.position = SetPosition;
+        }
+        public void ApplyDamage(float damage)
+        {
+            if(EnemyModel.Health - damage > 0)
+            {
+                EnemyModel.Health -= damage;
+            }
+            else
+            {
+                //play a destroy particle effect
+                EnemyObjectPooler.Instance.ReturnItemToPool(this);
+            }
         }
     }
     
