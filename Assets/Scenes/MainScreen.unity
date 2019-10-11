@@ -203,6 +203,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &547291694
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +305,8 @@ MonoBehaviour:
   - SpawnLocation: {x: -1, y: 10, z: 0}
     EnemySpawnerGmo: {fileID: 7641733032148750334, guid: fd861ca52e0922e43b59da6819a62651,
       type: 3}
+=======
+>>>>>>> a536b70234f1121969de07c33b39666fb06ef0b7
 --- !u!1 &860990847
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,6 +337,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &961208734
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +414,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed24656c1833464c81afe719afbc18a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> a536b70234f1121969de07c33b39666fb06ef0b7
 --- !u!1 &1185525096
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +446,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1001 &2066076061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -509,6 +516,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab933ec478c1aaf4e96761fb079b34ef, type: 3}
+=======
+>>>>>>> a536b70234f1121969de07c33b39666fb06ef0b7
 --- !u!1 &2113977957
 GameObject:
   m_ObjectHideFlags: 0
