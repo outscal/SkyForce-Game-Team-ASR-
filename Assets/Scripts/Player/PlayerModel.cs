@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerModel 
 {
+    [SerializeField]
     public PlayerScriptableObject playerScriptableObject;
     public PlayerModel (PlayerScriptableObject tankScriptableObject){
         PlayerName = tankScriptableObject.PlayerName;

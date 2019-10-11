@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BulletController
 {
-    public BulletController(BulletModel model, BulletView bulletPrefab){
+    public BulletController(BulletModel model, BulletView bulletPrefab, Vector3 position){
         BulletModel = model;
-        BulletView = bulletPrefab;
+        BulletView = GameObject.Instantiate<BulletView>(bulletPrefab,position,Quaternion.identity);
 
     }
     public BulletModel BulletModel { get;}
