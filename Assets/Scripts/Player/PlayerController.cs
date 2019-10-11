@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class PlayerController
 {
+        [SerializeField]
+
     public PlayerView playerView;
+        [SerializeField]
+
     private PlayerModel playerModel;
+        [SerializeField]
+
     private BulletController bulletController;
     private bool isLoaded;
 
@@ -19,15 +25,15 @@ public class PlayerController
     }
     public PlayerModel PlayerModel { get; }
     public PlayerView PlayerView { get; }
-    public void SetPosition(Vector3 newPosition)
+    public void SetPosition(float xPos,float yPos,float zPos)
     {
-        PlayerView.SetPosition(newPosition);
+        PlayerView.SetPosition(xPos,yPos,zPos);
     }
     public void ObjectBoundWithScreen()
     {
         Debug.Log("Call");
-        PlayerView.transform.position = new Vector3(Mathf.Clamp(PlayerView.transform.position.x, -2.3f, 2.3f),
-                                 Mathf.Clamp(PlayerView.transform.position.y, -4.2f, 4.2f),
+        PlayerView.transform.position = new Vector3(Mathf.Clamp(PlayerView.transform.position.x, -3.06f, 3.06f),
+                                 Mathf.Clamp(PlayerView.transform.position.y, -6.18f, 6.18f),
                                  PlayerView.transform.position.z);
         Debug.Log("Bound");
     }

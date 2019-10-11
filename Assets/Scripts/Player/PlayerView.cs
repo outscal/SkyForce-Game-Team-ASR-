@@ -4,38 +4,44 @@ using UnityEngine;
 
 public class PlayerView : MonoBehaviour
 {
+    [SerializeField]
     private PlayerModel playerModel;
+
     private GameObject playerPrefab;
+    [SerializeField]
+
     private PlayerController playerController;
+    [SerializeField]
+
     private IInput controllerInput;
     void Start()
     {
 #if UNITY_EDITOR
         controllerInput = new InputHandler_Editor();
-#endif
-#if UNITY_ANDROID
+
+#elif UNITY_ANDROID
        controllerInput = new InputHandler_Android();
 #endif
     }
     void Update()
     {
-        
+        //playerController.ObjectBoundWithScreen();
         Debug.Log("Duck");
         controllerInput.ReadInput();
-        playerController.GetBullet(); 
-        
-        
+        playerController.GetBullet();
+
+
     }
-   
+
     public void Init(PlayerController activeController)
     {
         this.playerController = activeController;
     }
-    public void SetPosition(Vector3 newPosition)
+    public void SetPosition(float xPos,float yPos,float zPos)
     {
-        transform.position = newPosition;
+        transform.Translate(xPos,yPos,zPos);
     }
-    
-    
+
+
 
 }

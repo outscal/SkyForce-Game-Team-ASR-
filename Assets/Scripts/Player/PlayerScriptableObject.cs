@@ -7,10 +7,6 @@ public class PlayerScriptableObject : ScriptableObject
 public string PlayerName;
 public float Speed;
 public float Health;
+[SerializeField]
 public PlayerView playerPrefab;
-}
-[CreateAssetMenu(fileName = "PlayerScriptableObjectsList",menuName = "ScriptableObjects/Player/NewPlayerScriptableObjectList")]
-public class PlayerScriptableObjectList : ScriptableObject
-{
-public PlayerScriptableObject[] player;
 }
