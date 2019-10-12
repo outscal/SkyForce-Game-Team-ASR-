@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<EnemyView>()!=null) 
+        if(collision.GetComponent<PlayerView>()!=null) 
         {
             Debug.LogError(" * Change getcomponent to identify the player When integrated * ");
             StartSpawn = true;
