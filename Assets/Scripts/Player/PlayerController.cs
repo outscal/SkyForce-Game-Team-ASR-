@@ -41,7 +41,7 @@ public class PlayerController
     {
         if(isLoaded == true){
         Debug.Log("SpawnBullet");
-        bulletController = BulletService.Instance.SpawnBullet(PlayerView.transform.position + new Vector3(0f, 1.7f, 0f));
+        bulletController = BulletService.Instance.SpawnBullet(PlayerView.transform.position + new Vector3(0f, 0.5f, 0f));
         isLoaded = false;
         Reload();
     }

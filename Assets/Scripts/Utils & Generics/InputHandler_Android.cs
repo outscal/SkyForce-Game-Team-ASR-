@@ -9,13 +9,11 @@ public class InputHandler_Android : IInput
 
     public void ReadInput()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
-        {
-            Vector2 TouchPosition = Input.GetTouch(0).deltaPosition;
-            PlayerService.Instance.SetPosition(TouchPosition.x*10*Time.deltaTime,TouchPosition.y*10*Time.deltaTime,0f);
-            Debug.Log("Player Service");
-
-        }
+        Vector3 target;
+        target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        target.z = 0f;
+        PlayerService.Instance.SetPosition(target.x, target.y + 1.5f, target.z);
+        Debug.Log("Player Service");
     }
 }
 

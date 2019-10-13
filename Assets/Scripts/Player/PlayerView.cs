@@ -25,7 +25,7 @@ public class PlayerView : MonoBehaviour
     }
     void Update()
     {
-        //playerController.ObjectBoundWithScreen();
+        playerController.ObjectBoundWithScreen();
         Debug.Log("Duck");
         controllerInput.ReadInput();
         playerController.GetBullet();
@@ -39,7 +39,7 @@ public class PlayerView : MonoBehaviour
     }
     public void SetPosition(float xPos,float yPos,float zPos)
     {
-        transform.Translate(xPos,yPos,zPos);
+        transform.position = new Vector3(xPos,yPos,zPos);
     }
 
 
