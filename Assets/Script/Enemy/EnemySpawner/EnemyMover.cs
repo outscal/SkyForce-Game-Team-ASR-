@@ -17,7 +17,7 @@ namespace SkyForce.SpawnEnemy
         float timer = 0;
         private void Start()
         {
-            GetWaypointScriptable(enemySpawnScriptable.WaypointType);
+            //GetWaypointScriptable(enemySpawnScriptable.WaypointType);
         }
         private void Update()
         {

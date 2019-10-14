@@ -6,11 +6,9 @@ using UnityEngine;
 public class EnemySpawnScriptable : ScriptableObject
 {
     public EnemyType EnemyTypeToSpawn;
-    public WaypointType WaypointType;
     public int EnemyNumber;
     [Min(1)]
     public int EnemyNoPerWave;
     public float TimeBetweenSpawns;
     public float ColliderRadius;
-
 }

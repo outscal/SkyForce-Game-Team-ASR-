@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4272f0569e0282049b822fbcdcc8b886, type: 3}
-  m_Name: SpawnScriptableT2
+  m_Name: RotatingY
   m_EditorClassIdentifier: 
-  EnemyTypeToSpawn: 2
-  WaypointType: 0
-  EnemyNumber: 10
+  EnemyTypeToSpawn: 3
+  EnemyNumber: 15
   EnemyNoPerWave: 1
-  TimeBetweenSpawns: 1.5
+  TimeBetweenSpawns: 1
   ColliderRadius: 3

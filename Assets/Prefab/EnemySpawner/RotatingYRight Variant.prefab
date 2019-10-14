@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7735216559533962350
+--- !u!1001 &551944393830244132
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,17 +10,17 @@ PrefabInstance:
     - target: {fileID: 96231245597768592, guid: 7fa7b2f9da06bc84082064418ed915f7,
         type: 3}
       propertyPath: m_Name
-      value: Spawner
+      value: RotatingYRight
       objectReference: {fileID: 0}
     - target: {fileID: 96231245597768593, guid: 7fa7b2f9da06bc84082064418ed915f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.52
+      value: 2.36
       objectReference: {fileID: 0}
     - target: {fileID: 96231245597768593, guid: 7fa7b2f9da06bc84082064418ed915f7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.38
+      value: 7.55
       objectReference: {fileID: 0}
     - target: {fileID: 96231245597768593, guid: 7fa7b2f9da06bc84082064418ed915f7,
         type: 3}
@@ -71,7 +71,32 @@ PrefabInstance:
         type: 3}
       propertyPath: enemySpawnScriptable
       value: 
-      objectReference: {fileID: 11400000, guid: df5f6faffd216604ab80c4efa81bd144,
+      objectReference: {fileID: 11400000, guid: 8a8d030d8e5b12c42ac2fefd90196059,
         type: 2}
+    - target: {fileID: 96231245597768599, guid: 7fa7b2f9da06bc84082064418ed915f7,
+        type: 3}
+      propertyPath: TweenToPos.x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 96231245597768599, guid: 7fa7b2f9da06bc84082064418ed915f7,
+        type: 3}
+      propertyPath: TweenToPos.y
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 96231245597768599, guid: 7fa7b2f9da06bc84082064418ed915f7,
+        type: 3}
+      propertyPath: easeType
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 96231245597768599, guid: 7fa7b2f9da06bc84082064418ed915f7,
+        type: 3}
+      propertyPath: TweenTimeValue
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 96231245597768598, guid: 7fa7b2f9da06bc84082064418ed915f7,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fa7b2f9da06bc84082064418ed915f7, type: 3}

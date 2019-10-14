@@ -15,5 +15,5 @@ MonoBehaviour:
   PlayerName: Plane
   Speed: 10
   Health: 10
-  playerPrefab: {fileID: 1534388882833329701, guid: 1afc21e24a5374f469b44aa2e8f73bd7,
+  playerPrefab: {fileID: 7085656455850439478, guid: 1f25b4a2399a0f449be209ba87a133ea,
     type: 3}

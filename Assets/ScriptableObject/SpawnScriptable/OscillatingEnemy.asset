@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ea86ed7737eff84899042501771607d, type: 3}
-  m_Name: PlayerScriptableObjectsList
+  m_Script: {fileID: 11500000, guid: 4272f0569e0282049b822fbcdcc8b886, type: 3}
+  m_Name: OscillatingEnemy
   m_EditorClassIdentifier: 
-  player:
-  - {fileID: 11400000, guid: 0db1154d162a8c44e8116a444f22cf3c, type: 2}
+  EnemyTypeToSpawn: 2
+  EnemyNumber: 10
+  EnemyNoPerWave: 1
+  TimeBetweenSpawns: 1.5
+  ColliderRadius: 3

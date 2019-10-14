@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnEnemySpawnerService : MonoSingletonGeneric<SpawnEnemySpawnerService>
 {
     public SpawnEnemySpawnerData[] spawnEnemySpawnerData;
+    [HideInInspector]
     protected override void Awake()
     {
         base.Awake();
