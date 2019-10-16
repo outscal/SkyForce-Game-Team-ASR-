@@ -41,6 +41,7 @@ public class PlayerView : MonoBehaviour
     {
         transform.position = new Vector3(xPos,yPos,zPos);
     }
+    
 
 
 

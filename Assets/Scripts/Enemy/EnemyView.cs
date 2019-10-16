@@ -4,16 +4,16 @@ using UnityEngine;
 
 namespace SkyForce.Enemy
 {
-    public class EnemyView : MonoBehaviour,IDamagable
+    public class EnemyView : MonoBehaviour, IDamagable
     {
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            IDamagable Collobj = collision.GetComponent<IDamagable>();
-            if (Collobj != null)
-            {
-                Collobj.TakeDamage(enemyController.EnemyModel.CollideDamage);
-            }
-        }
+        // private void OnTriggerEnter2D(Collider2D collision)
+        // {
+        //     IDamagable Collobj = collision.GetComponent<IDamagable>();
+        //     if (Collobj != null)
+        //     {
+        //         Collobj.TakeDamage(enemyController.EnemyModel.CollideDamage);
+        //     }
+        // }
 
         #region Declaration of variables
 
@@ -37,7 +37,7 @@ namespace SkyForce.Enemy
             if (enemyController.EnemyModel.IsRotating)
             {
                 SetRotationAxis();// convert to accept values  & make it virtual 
-            }   
+            }
         }
 
         private void SetRotationAxis()
@@ -59,13 +59,13 @@ namespace SkyForce.Enemy
         // Update is called once per frame
         void Update()
         {
-            if(enemyController.EnemyModel != null)
+            if (enemyController.EnemyModel != null)
             {
                 MoveEnemy();
                 RotateEnemy();
             }
             //Pool Test Code
-            if (timer >3)
+            if (timer > 3)
             {
                 EnemyObjectPooler.Instance.ReturnItemToPool(this.enemyController);
                 gameObject.SetActive(false);
@@ -75,7 +75,7 @@ namespace SkyForce.Enemy
             {
                 timer += Time.deltaTime;
             }
-            
+
         }
 
         #region move enemy functions
@@ -107,12 +107,12 @@ namespace SkyForce.Enemy
                 enemyController.EnemyModel.MoveToLeftFirst = true;
                 return new Vector2(transform.position.x, transform.position.y) + new Vector2(enemyController.EnemyModel.RightOffsetValue, enemyController.EnemyModel.Speed);
             }
-            
+
         }
 
         private void RotateEnemy()
         {
-            transform.Rotate(axisOfRoatation,enemyController.EnemyModel.RotateByAngleValue);
+            transform.Rotate(axisOfRoatation, enemyController.EnemyModel.RotateByAngleValue);
         }
         #endregion
 
@@ -124,6 +124,11 @@ namespace SkyForce.Enemy
         }
 
         #endregion
+         public void OnDeath()
+    {
+        Destroy(this.gameObject);
     }
 
+    }
+   
 }

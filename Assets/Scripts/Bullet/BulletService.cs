@@ -10,6 +10,7 @@ public class BulletService : MonoSingletonGeneric<BulletService>
        BulletModel model = new BulletModel(1,1);
        BulletController bulletController = new BulletController(model,bulletPrefab,BulletPosition);
        return bulletController;
+       
 
    }
 }

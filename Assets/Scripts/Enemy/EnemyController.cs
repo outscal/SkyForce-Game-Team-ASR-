@@ -37,6 +37,8 @@ namespace SkyForce.Enemy
             else
             {
                 //play a destroy particle effect
+                EnemyView.OnDeath();
+            
                 EnemyObjectPooler.Instance.ReturnItemToPool(this);
             }
         }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8105721877588077599}
   - component: {fileID: 8105721877588077584}
   - component: {fileID: 7834877041361554345}
+  - component: {fileID: -7468528407056592711}
   m_Layer: 0
   m_Name: EnemyTest
   m_TagString: Untagged
@@ -92,7 +93,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -143,3 +144,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72ce2cbd545f52449328670a1fa2276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &-7468528407056592711
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8105721877588077585}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
