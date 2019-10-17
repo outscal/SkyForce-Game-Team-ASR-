@@ -19,6 +19,7 @@ public class PlayerService : MonoSingletonGeneric<PlayerService>
         playerView = playerScriptableObjectList.player[0].playerPrefab;
         PlayerModel model = new PlayerModel(playerScriptableObjectList.player[0]);
         playerController = new PlayerController(model,playerView);
+        
     }
     void Update()
     {
