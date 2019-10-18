@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIService : MonoSingletonGeneric<UIService>
  {
-//    public Image bar;
+   public Image healthBar;
    
 //    private HealthBar healthBar;
 //    private void Start(){
