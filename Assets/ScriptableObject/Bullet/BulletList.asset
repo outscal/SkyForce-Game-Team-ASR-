@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c23f6c4ca2473458ea1334db529abe, type: 3}
   m_Name: BulletList
   m_EditorClassIdentifier: 
-  bulletList: []
+  bulletList:
+  - {fileID: 11400000, guid: 3266aad7daecb6b409bf1952c807bce8, type: 2}

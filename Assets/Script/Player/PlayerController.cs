@@ -70,7 +70,7 @@ public class PlayerController
             //UIService.Instance.HealthBarUpdate(damage/PlayerModel.Health);
             // 1f means death
         }
-        UIService.Instance.HealthBarUpdate((0.5f));
+        UIService.Instance.HealthBarUpdate((damage/PlayerModel.Health));
 
         
 

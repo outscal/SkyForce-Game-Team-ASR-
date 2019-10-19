@@ -11,7 +11,7 @@ public class UIService : MonoSingletonGeneric<UIService>
     private void Start()
     {
 
-        gameView = healthBar.GetComponent<GameView>();
+        gameView = healthBar.GetComponentInParent<GameView>();
 
 
     }
