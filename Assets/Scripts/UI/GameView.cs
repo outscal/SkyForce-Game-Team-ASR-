@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class GameView : MonoBehaviour
 {
     private UIService uiService;
-    public void Start(){
-        uiService = GetComponent<UIService>();
-    }
-    private float damageAmount = 0;
     
-    public void HandleBar()
+    public void Start(){
+        uiService = GetComponentInParent<UIService>();
+        //damageAmount = BulletService.Instance.bulletDamage;
+    }
+    
+    public void HandleBar(float damage)
     {
-       // uiService.bar.fillAmount = 0.5f;
+        Debug.Log("Step 2");
+       uiService.healthBar.fillAmount = damage;
     }
 }

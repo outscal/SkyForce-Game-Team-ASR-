@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class BulletService : MonoSingletonGeneric<BulletService>
 {
-   public BulletView bulletPrefab;
+    public BulletScriptableObjectList bulletScriptableObjectList;
+    private BulletView bulletPrefab;
+    [HideInInspector]
+    public float bulletSpeed;
+     [HideInInspector]
+    public float bulletDamage;
+
    public BulletController SpawnBullet(Vector3 BulletPosition){
        Debug.Log("BulletController Spawn");
-       BulletModel model = new BulletModel(1,1);
+       bulletPrefab = bulletScriptableObjectList.bulletList[0].bulletPrefab;
+       bulletSpeed = bulletScriptableObjectList.bulletList[0].BulletSpeed;
+       bulletDamage = bulletScriptableObjectList.bulletList[0].Damage;
+       BulletModel model = new BulletModel(bulletScriptableObjectList.bulletList[0]);
        BulletController bulletController = new BulletController(model,bulletPrefab,BulletPosition);
        return bulletController;
        

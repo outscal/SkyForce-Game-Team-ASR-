@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10f78722f1b263a47a3f5eecad2edacd, type: 3}
-  m_Name: PlayerScriptableObjects
+  m_Script: {fileID: 11500000, guid: f0c23f6c4ca2473458ea1334db529abe, type: 3}
+  m_Name: BulletList
   m_EditorClassIdentifier: 
-  PlayerName: Plane
-  Speed: 10
-  Health: 20
-  playerPrefab: {fileID: 1534388882833329701, guid: 1afc21e24a5374f469b44aa2e8f73bd7,
-    type: 3}
+  bulletList:
+  - {fileID: 11400000, guid: 60be1c9c46885384aa1e010b67d56eee, type: 2}
