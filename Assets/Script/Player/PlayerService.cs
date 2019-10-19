@@ -9,7 +9,7 @@ public class PlayerService : MonoSingletonGeneric<PlayerService>
 
     [HideInInspector]
     [SerializeField]
-    public PlayerView playerView;
+    private PlayerView playerView;
 
     [SerializeField]
     private PlayerController playerController;

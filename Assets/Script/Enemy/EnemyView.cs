@@ -124,11 +124,22 @@ namespace SkyForce.Enemy
         }
 
         #endregion
-         public void OnDeath()
-    {
-        Destroy(this.gameObject);
-    }
+        public void OnDeath()
+        {
+            Destroy(this.gameObject);
+        }
+        void OnCollisionEnter2D(Collision2D other)
+        {
+            IDamagable damagable = other.gameObject.GetComponent<IDamagable>();
+            if (damagable != null)
+            {
+                damagable.TakeDamage(5f);
+                Debug.Log("Collide");
+                 Destroy(other.gameObject);
+                 Destroy(this.gameObject);
+            }
+        }
 
     }
-   
+
 }

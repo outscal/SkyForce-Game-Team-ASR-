@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerController
 {
-        [SerializeField]
+    [SerializeField]
 
     public PlayerView playerView;
-        [SerializeField]
+    [SerializeField]
 
     private PlayerModel playerModel;
-        [SerializeField]
+    [SerializeField]
 
     private BulletController bulletController;
     private bool isLoaded;
@@ -18,16 +18,16 @@ public class PlayerController
     public PlayerController(PlayerModel playerModel, PlayerView playerView)
     {
         PlayerModel = playerModel;
-        PlayerView = GameObject.Instantiate<PlayerView>(playerView,new Vector3 (-0.008988857f,3.59822f,0f),Quaternion.identity);
+        PlayerView = GameObject.Instantiate<PlayerView>(playerView, new Vector3(-0.008988857f, 3.59822f, 0f), Quaternion.identity);
         // PlayerView = playerView;
         PlayerView.Init(this);
-         isLoaded = true;
+        isLoaded = true;
     }
     public PlayerModel PlayerModel { get; }
     public PlayerView PlayerView { get; }
-    public void SetPosition(float xPos,float yPos,float zPos)
+    public void SetPosition(float xPos, float yPos, float zPos)
     {
-        PlayerView.SetPosition(xPos,yPos,zPos);
+        PlayerView.SetPosition(xPos, yPos, zPos);
     }
     public void ObjectBoundWithScreen()
     {
@@ -39,19 +39,41 @@ public class PlayerController
     }
     public void GetBullet()
     {
-        if(isLoaded == true){
-        Debug.Log("SpawnBullet");
-        bulletController = BulletService.Instance.SpawnBullet(PlayerView.transform.position + new Vector3(0f, 0.5f, 0f));
-        isLoaded = false;
-        Reload();
-    }
+        if (isLoaded == true)
+        {
+            Debug.Log("SpawnBullet");
+            bulletController = BulletService.Instance.SpawnBullet(PlayerView.transform.position + new Vector3(0f, 0.5f, 0f));
+            isLoaded = false;
+            Reload();
+        }
     }
     public async void Reload()
     {
         Debug.Log("Async Call");
         await new WaitForSeconds(0.4f);
         isLoaded = true;
+
+    }
+    public void ApplyDamage(float damage)
+    {
+       
+        if (PlayerModel.Health - damage >= 0)
+        {
+            PlayerModel.Health -= damage;
+            
+            
         
+            }
+        else
+        {
+            PlayerView.OnDeath();
+            //UIService.Instance.HealthBarUpdate(damage/PlayerModel.Health);
+            // 1f means death
+        }
+        UIService.Instance.HealthBarUpdate((0.5f));
+
+        
+
     }
 
 

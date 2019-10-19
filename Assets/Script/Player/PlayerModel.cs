@@ -16,6 +16,6 @@ public class PlayerModel
     }
     public string PlayerName{ get; }
     public float Speed{get;}
-    public float Health {get;}
+    public float Health {get; set;}
     public PlayerView PlayerPrefab {get;}
 }

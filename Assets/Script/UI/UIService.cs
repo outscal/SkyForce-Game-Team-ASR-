@@ -4,18 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UIService : MonoSingletonGeneric<UIService>
- {
-   public Image healthBar;
-   
-//    private HealthBar healthBar;
-//    private void Start(){
-//         //healthBar = new HealthBar(this);
-//         healthBar = bar.GetComponent<HealthBar>();
-      
-//    }
-   
-//    private void Update(){
-//       healthBar.HandleBar();
-//    }
-  
+{
+    public Image healthBar;
+    private GameView gameView;
+
+    private void Start()
+    {
+
+        gameView = healthBar.GetComponent<GameView>();
+
+
+    }
+    public void HealthBarUpdate(float damage)
+    {
+        Debug.Log("Step 1");
+        gameView.HandleBar(damage);
+        Debug.Log("Step3");
+    }
 }

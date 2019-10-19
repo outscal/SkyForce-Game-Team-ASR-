@@ -5,9 +5,15 @@ using SkyForce.Interfaces;
 
 public class BulletView : MonoBehaviour
 {
+    private BulletModel bulletModel;
+    private float speed;
+    void Start()
+    {
+        speed = BulletService.Instance.bulletSpeed;
+    }
     void Update()
     {
-        transform.Translate(0, 1 * Time.deltaTime, 0);
+        transform.Translate(0, speed * Time.deltaTime, 0);
     }
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -20,5 +26,5 @@ public class BulletView : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    
+
 }
