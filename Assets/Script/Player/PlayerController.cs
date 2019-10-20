@@ -14,6 +14,7 @@ public class PlayerController
 
     private BulletController bulletController;
     private bool isLoaded;
+    private float initialHealth;
 
     public PlayerController(PlayerModel playerModel, PlayerView playerView)
     {
@@ -22,6 +23,7 @@ public class PlayerController
         // PlayerView = playerView;
         PlayerView.Init(this);
         isLoaded = true;
+        initialHealth = PlayerModel.Health;
     }
     public PlayerModel PlayerModel { get; }
     public PlayerView PlayerView { get; }
@@ -57,7 +59,7 @@ public class PlayerController
     public void ApplyDamage(float damage)
     {
        
-        if (PlayerModel.Health - damage > 0)
+        if (PlayerModel.Health  > 0)
         {
             PlayerModel.Health -= damage;
             
@@ -70,7 +72,7 @@ public class PlayerController
             //UIService.Instance.HealthBarUpdate(damage/PlayerModel.Health);
             // 1f means death
         }
-        UIService.Instance.HealthBarUpdate((damage/PlayerModel.Health));
+        UIService.Instance.HealthBarUpdate((1-(PlayerModel.Health/initialHealth)));
 
         
 
