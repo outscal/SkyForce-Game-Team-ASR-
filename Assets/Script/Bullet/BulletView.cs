@@ -21,7 +21,7 @@ public class BulletView : MonoBehaviour
         if (damagable != null)
         {
             damagable.TakeDamage(50f);
-            Debug.Log("Collide");
+          //  Debug.Log("Collide");
             //Destroy(other.gameObject);
             Destroy(this.gameObject);
         }

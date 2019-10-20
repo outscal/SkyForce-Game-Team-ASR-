@@ -57,7 +57,7 @@ public class PlayerController
     public void ApplyDamage(float damage)
     {
        
-        if (PlayerModel.Health - damage >= 0)
+        if (PlayerModel.Health - damage > 0)
         {
             PlayerModel.Health -= damage;
             

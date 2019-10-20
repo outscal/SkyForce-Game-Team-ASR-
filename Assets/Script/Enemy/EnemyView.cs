@@ -135,8 +135,8 @@ namespace SkyForce.Enemy
             {
                 damagable.TakeDamage(5f);
                 Debug.Log("Collide");
-                 Destroy(other.gameObject);
-                 Destroy(this.gameObject);
+               //  Destroy(other.gameObject);
+                 //Destroy(this.gameObject);
             }
         }
 
