@@ -5,13 +5,16 @@ using UnityEngine.UI;
 
 public class UIService : MonoSingletonGeneric<UIService>
 {
-    public Image healthBar;
+     public Image healthBar;
+     public Text killText;
     private GameView gameView;
 
     private void Start()
     {
 
         gameView = healthBar.GetComponentInParent<GameView>();
+        killText = GetComponentInChildren<Text>();
+        EventServices.KillCounter += callKillCounter;
 
 
     }
@@ -21,4 +24,13 @@ public class UIService : MonoSingletonGeneric<UIService>
         gameView.HandleBar(damage);
         Debug.Log("Step3");
     }
+    private void callKillCounter(){
+        gameView.UpdateKillCounter();
+    }
+    void OnDestroy()
+    {
+        EventServices.KillCounter -= callKillCounter;
+    }
 }
+
+
