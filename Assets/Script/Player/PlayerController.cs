@@ -27,9 +27,9 @@ public class PlayerController
     }
     public PlayerModel PlayerModel { get; }
     public PlayerView PlayerView { get; }
-    public void SetPosition(float xPos, float yPos, float zPos)
+    public void SetPosition(float xPos,float yPos,float zPos)
     {
-        PlayerView.SetPosition(xPos, yPos, zPos);
+        PlayerView.SetPosition(xPos,yPos,zPos);
     }
     public void ObjectBoundWithScreen()
     {

@@ -43,9 +43,9 @@ public class PlayerView : MonoBehaviour, IDamagable
     {
         this.playerController = activeController;
     }
-    public void SetPosition(float xPos, float yPos, float zPos)
+    public void SetPosition(float xPos,float yPos,float zPos)
     {
-        transform.position = new Vector3(xPos, yPos, zPos);
+        transform.position = new Vector3(xPos,yPos,zPos);
     }
     public void OnDeath()
     {
