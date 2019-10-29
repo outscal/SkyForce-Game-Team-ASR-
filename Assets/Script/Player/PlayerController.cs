@@ -19,7 +19,7 @@ public class PlayerController
     public PlayerController(PlayerModel playerModel, PlayerView playerView)
     {
         PlayerModel = playerModel;
-        PlayerView = GameObject.Instantiate<PlayerView>(playerView, new Vector3(-0.008988857f, 3.59822f, 0f), Quaternion.identity);
+        PlayerView = GameObject.Instantiate<PlayerView>(playerView, new Vector3(0f,0f, -5f), Quaternion.identity);
         // PlayerView = playerView;
         PlayerView.Init(this);
         isLoaded = true;

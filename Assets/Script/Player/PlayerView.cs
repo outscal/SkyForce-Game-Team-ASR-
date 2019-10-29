@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SkyForce.Interfaces;
 
-public class PlayerView : MonoBehaviour, IDamagable
+public class PlayerView : MonoBehaviour,IDamagable
 {
     [SerializeField]
     private PlayerModel playerModel;
@@ -26,10 +26,11 @@ public class PlayerView : MonoBehaviour, IDamagable
     }
     void Update()
     {
-        playerController.ObjectBoundWithScreen();
+        //playerController.ObjectBoundWithScreen();
         Debug.Log("Duck");
         controllerInput.ReadInput();
         playerController.GetBullet();
+        transform.Translate(0, 1f * Time.deltaTime, 0);
 
 
     }

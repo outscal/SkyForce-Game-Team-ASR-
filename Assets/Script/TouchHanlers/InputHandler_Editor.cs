@@ -12,7 +12,7 @@ public class InputHandler_Editor : IInput
     {
         if(Input.GetMouseButton(0))
         target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        target.z = 0f;
+        target.z = -3f;
         PlayerService.Instance.SetPosition(target.x, target.y + 1.5f, target.z);
         Debug.Log("Player Service");
 }

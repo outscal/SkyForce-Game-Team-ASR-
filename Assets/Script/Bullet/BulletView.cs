@@ -15,16 +15,28 @@ public class BulletView : MonoBehaviour
     {
         transform.Translate(0, speed * Time.deltaTime, 0);
     }
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        IDamagable damagable = other.gameObject.GetComponent<IDamagable>();
-        if (damagable != null)
-        {
-            damagable.TakeDamage(50f);
-          //  Debug.Log("Collide");
-            //Destroy(other.gameObject);
-            Destroy(this.gameObject);
-        }
-    }
+    // void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     IDamagable damagable = other.gameObject.GetComponent<IDamagable>();
+    //     if (damagable != null)
+    //     {
+    //         damagable.TakeDamage(50f);
+    //       //  Debug.Log("Collide");
+    //         //Destroy(other.gameObject);
+    //         Destroy(this.gameObject);
+    //     }
+    // }
+      public void OnTriggerEnter2D(Collider2D other)
+      {
+          IDamagable damagable = other.gameObject.GetComponent<IDamagable>();
+            if (damagable != null)
+            {
+                 damagable.TakeDamage(5f);
+                 Debug.Log("Collide");
+                // Destroy(other.gameObject);
+               //  Destroy(this.gameObject);
+            }
+          
+      }
 
 }
