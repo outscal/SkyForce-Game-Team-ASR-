@@ -34,3 +34,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Logs/Packages-Update.log
+Assets/Materials/TestMaterial.mat.meta
+Assets/Materials/TestMaterial.mat
