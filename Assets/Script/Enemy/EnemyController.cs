@@ -8,6 +8,7 @@ namespace SkyForce.Enemy
         public EnemyView EnemyView { get; }
         public EnemyModel EnemyModel { get; set;}
         private Vector3 SpawnPos;
+        GameObject explode;
         public EnemyController(EnemyView enemyView,EnemyModel enemyModel)
         {
             EnemyView = GameObject.Instantiate<EnemyView>(enemyView);
@@ -36,10 +37,13 @@ namespace SkyForce.Enemy
             }
             else
             {
-                //play a destroy particle effect
+                //play a destroy particle effect or anim
                 EnemyView.OnDeath();
                 EventServices.InitializeKillCounter();            
                 EnemyObjectPooler.Instance.ReturnItemToPool(this);
+                explode = GameObject.Instantiate(EnemyView.explosion);
+                explode.transform.position = EnemyView.transform.position;
+                EnemyView.DestroyThisObject(explode, .5f);
             }
         }
     }

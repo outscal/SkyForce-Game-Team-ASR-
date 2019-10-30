@@ -5,6 +5,5 @@
     EnemyOscillating2 = 2, // Moves from left to right
     EnemyRotY3 = 3, // rot on y axis
     OneHitKO4 = 4 ,// 1 hit ko enemy
-    ShootingEnemy = 5
-        
+    ShootingEnemy = 5        
 }

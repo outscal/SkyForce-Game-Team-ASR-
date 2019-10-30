@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SkyForce.Interfaces;
+using SkyForce.ObjectPool;
+using SkyForce.Enemy;
 
 public class BulletView : MonoBehaviour
 {
@@ -20,9 +22,10 @@ public class BulletView : MonoBehaviour
         IDamagable damagable = other.gameObject.GetComponent<IDamagable>();
         if (damagable != null)
         {
-            damagable.TakeDamage(50f);
-          //  Debug.Log("Collide");
-            //Destroy(other.gameObject);
+            damagable.TakeDamage(/*bulletModel.BulletDamage*/50f);
+        }
+        else
+        {
             Destroy(this.gameObject);
         }
     }
