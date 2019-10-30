@@ -492,7 +492,7 @@ MonoBehaviour:
     EnemySpawnerGmo: {fileID: 503566767610717364, guid: 20c4bd976c0236c449be35d0b95e2112,
       type: 3}
   - SpawnLocation: {x: 1, y: 5, z: 0}
-    EnemySpawnerGmo: {fileID: 7283481621420770857, guid: bf080959ee729824c82041d2bb529d70,
+    EnemySpawnerGmo: {fileID: 503566767610717364, guid: 20c4bd976c0236c449be35d0b95e2112,
       type: 3}
   - SpawnLocation: {x: -1, y: 8, z: 0}
     EnemySpawnerGmo: {fileID: 8578601197720351288, guid: 31972d8980be27743b9898d12f3954b0,
