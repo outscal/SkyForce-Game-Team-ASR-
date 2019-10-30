@@ -16,17 +16,23 @@ namespace SkyForce.Enemy
         // }
 
         #region Declaration of variables
-
-        private EnemyController enemyController;
+            [HideInInspector]
+        public EnemyController enemyController;
         Rigidbody2D rgbd2D;
         Vector3 axisOfRoatation;
         float timer = 0;
+        public GameObject explosion;
+
         //private EnemyModel Defaultmodel;
         #endregion
 
         public void TakeDamage(float damage)
         {
             enemyController.ApplyDamage(damage);
+        }
+        public void DestroyThisObject(GameObject gmo , float time)
+        {
+            Destroy(gmo, time);
         }
         // Start is called before the first frame update
         void Start()

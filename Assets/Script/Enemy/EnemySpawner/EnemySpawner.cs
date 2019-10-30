@@ -74,6 +74,10 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Tweenpos += enemyGmo.transform.position;
                 }
+                if (!enemyController.EnemyModel.IsRotating)
+                {
+                    enemyGmo.transform.LookAt(Tweenpos);
+                }
                 iTween.MoveTo(enemyGmo, iTween.Hash("position",Tweenpos, "Time",TweenTimeValue,"easetype",easeType));
             }
         }
