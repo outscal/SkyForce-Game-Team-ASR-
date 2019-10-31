@@ -134,7 +134,7 @@ namespace SkyForce.Enemy
         {
             Destroy(this.gameObject);
         }
-        void OnCollisionEnter2D(Collision2D other)
+        void OnTriggerEnter2D(Collider2D  other)
         {
             IDamagable damagable = other.gameObject.GetComponent<IDamagable>();
             if (damagable != null)
