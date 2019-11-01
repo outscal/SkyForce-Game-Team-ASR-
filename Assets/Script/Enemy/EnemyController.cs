@@ -38,7 +38,7 @@ namespace SkyForce.Enemy
             else
             {
                 //play a destroy particle effect or anim
-                EnemyView.OnDeath();
+                //EnemyView.OnDeath();
                 EventServices.InitializeKillCounter();            
                 EnemyObjectPooler.Instance.ReturnItemToPool(this);
                 explode = GameObject.Instantiate(EnemyView.explosion);

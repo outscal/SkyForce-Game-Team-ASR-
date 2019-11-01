@@ -1,12 +1,10 @@
 ﻿using SkyForce.Enemy;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace SkyForce.SpawnEnemy
 {
-
     public class EnemyMover : MonoBehaviour
     {
         public EnemySpawnScriptable enemySpawnScriptable;

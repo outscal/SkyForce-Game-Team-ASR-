@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using SkyForce.Bullet;
 using UnityEngine;
 [CreateAssetMenu(fileName="BulletScriptableObject",menuName="ScriptableObjects/Bullet/NewBulletScriptableObject")]
 public class BulletScriptableObject : ScriptableObject
