@@ -22,6 +22,8 @@ namespace SkyForce.Enemy
         Vector3 axisOfRoatation;
         float timer = 0;
         public GameObject explosion;
+        public AudioSource audioSource;
+
 
         //private EnemyModel Defaultmodel;
         #endregion
@@ -33,6 +35,10 @@ namespace SkyForce.Enemy
         public void DestroyThisObject(GameObject gmo , float time)
         {
             Destroy(gmo, time);
+        }
+        public void PlayDeadAudio()
+        {
+            audioSource.Play();
         }
         // Start is called before the first frame update
         void Start()
