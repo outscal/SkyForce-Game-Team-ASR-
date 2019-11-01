@@ -9,9 +9,16 @@ namespace SkyForce.Bullet
         private float speed;
         void Start()
         {
+<<<<<<< HEAD
             speed = BulletService.Instance.bulletSpeed;
         }
         void Update()
+=======
+            damagable.TakeDamage(/*bulletModel.BulletDamage*/50f);
+            Debug.Log("bulletcollide");
+               }
+        else
+>>>>>>> MainMenu
         {
             transform.Translate(0, speed * Time.deltaTime, 0);
         }
