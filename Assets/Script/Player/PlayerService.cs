@@ -23,11 +23,18 @@ public class PlayerService : MonoSingletonGeneric<PlayerService>
     }
     void Update()
     {
+       // playerView.transform.Translate(0f,4.5f * Time.deltaTime,0f);
+      // playerController.PlayerView.transform.Translate(Vector3.up * 4.5f * Time.deltaTime);
+       // transform.Translate(0f,4.5f * Time.deltaTime,0f);
+       // playerController.SetPositionInScreen(this.transform.position.x,this.transform.position.y,this.transform.position.z);
+       // playerController.Move();
 
-        transform.Translate(Vector3.up * Time.deltaTime, Space.World);
     }
     public void SetPosition (float xPos,float yPos,float zPos)
     {
         playerController.SetPosition(xPos,yPos,zPos);
     }
+    // public Vector3 ReturnPlayerPosition (){
+    //    return playerController.ReturnPlayerPosition();
+    // }
 }

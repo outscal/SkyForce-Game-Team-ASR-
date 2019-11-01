@@ -30,6 +30,9 @@ public class PlayerView : MonoBehaviour, IDamagable
         Debug.Log("Duck");
         controllerInput.ReadInput();
         playerController.GetBullet();
+        //transform.Translate(0,10,0);
+        transform.Translate(Vector3.up*4.5f*Time.deltaTime);
+        
 
     }
     public void TakeDamage(float damage)
@@ -50,6 +53,12 @@ public class PlayerView : MonoBehaviour, IDamagable
     {
         Destroy(this.gameObject);
     }
+    // public void SetPositionInScreen(){
+    //     transform.position = new Vector3(0,10f * Time.deltaTime,0);
+    // }
+    // public Vector3 ReturnPosition(){
+    // return transform.position;
+    // }
 
 
 

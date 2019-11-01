@@ -10,11 +10,21 @@ public class InputHandler_Editor : IInput
 
       public void ReadInput()
     {
-        if(Input.GetMouseButton(0))
+      
+      //target = PlayerService.Instance.SetPositionInScreen();
+        if(Input.GetMouseButton(0)){
         target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         target.z = 0f;
-        PlayerService.Instance.SetPosition(target.x, target.y + 1.5f, target.z);
+        PlayerService.Instance.SetPosition(target.x, target.y, target.z);
         Debug.Log("Player Service");
+        }
+        else
+        {
+         
+          target.y = target.y + 4.5f*Time.deltaTime;
+          target.z = 0f;
+           PlayerService.Instance.SetPosition(target.x,target.y,target.z);
+        }
 }
 }
 #endif

@@ -35,7 +35,7 @@ public class PlayerController
     {
         Debug.Log("Call");
         PlayerView.transform.position = new Vector3(Mathf.Clamp(PlayerView.transform.position.x, -3.06f, 3.06f),
-                                 Mathf.Clamp(PlayerView.transform.position.y, -6.18f, 6.18f),
+                                 Mathf.Clamp(PlayerView.transform.position.y, -5.5f, 5.5f),
                                  PlayerView.transform.position.z);
         Debug.Log("Bound");
     }
@@ -77,6 +77,12 @@ public class PlayerController
         
 
     }
+    // public void Move(){
+    //     PlayerView.transform.Translate(Vector3.up * 4.5f * Time.deltaTime);
+    // }
+    // public Vector3 ReturnPlayerPosition(){
+    //  return PlayerView.ReturnPosition();
+    // }
 
 
 }

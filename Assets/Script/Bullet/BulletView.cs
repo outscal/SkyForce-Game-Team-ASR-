@@ -35,7 +35,8 @@ public class BulletView : MonoBehaviour
         if (damagable != null)
         {
             damagable.TakeDamage(/*bulletModel.BulletDamage*/50f);
-        }
+            Debug.Log("bulletcollide");
+               }
         else
         {
             Destroy(this.gameObject);
