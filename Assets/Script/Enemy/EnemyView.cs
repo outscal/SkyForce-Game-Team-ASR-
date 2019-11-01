@@ -1,4 +1,5 @@
-﻿using SkyForce.Interfaces;
+﻿using SkyForce.Bullet;
+using SkyForce.Interfaces;
 using SkyForce.ObjectPool;
 using UnityEngine;
 
@@ -82,10 +83,15 @@ namespace SkyForce.Enemy
                 EnemyObjectPooler.Instance.ReturnItemToPool(this.enemyController);
                 gameObject.SetActive(false);
                 timer = 0;
+
             }
             else
             {
                 timer += Time.deltaTime;
+            }
+            if (enemyController.EnemyModel.IsShooting)
+            {
+                BulletController bulletController = BulletService.Instance.SpawnBullet(transform.position);
             }
 
         }
@@ -136,6 +142,7 @@ namespace SkyForce.Enemy
         }
 
         #endregion
+
         public void OnDeath()
         {
             Destroy(this.gameObject);
@@ -145,8 +152,7 @@ namespace SkyForce.Enemy
             IDamagable damagable = other.gameObject.GetComponent<IDamagable>();
             if (damagable != null)
             {
-                damagable.TakeDamage(5f);
-                Debug.Log("Collide");
+                damagable.TakeDamage(enemyController.EnemyModel.CollideDamage);
                //  Destroy(other.gameObject);
                  //Destroy(this.gameObject);
             }

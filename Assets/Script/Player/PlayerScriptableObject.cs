@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using SkyForce.Player;
 using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerScriptableObjects",menuName = "ScriptableObjects/Player/NewPlayerScriptableObject")]
 public class PlayerScriptableObject : ScriptableObject
