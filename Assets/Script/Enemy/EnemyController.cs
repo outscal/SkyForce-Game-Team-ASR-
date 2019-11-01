@@ -44,6 +44,7 @@ namespace SkyForce.Enemy
                 explode = GameObject.Instantiate(EnemyView.explosion);
                 explode.transform.position = EnemyView.transform.position;
                 EnemyView.DestroyThisObject(explode, .5f);
+                EnemyView.PlayDeadAudio();             
             }
         }
     }

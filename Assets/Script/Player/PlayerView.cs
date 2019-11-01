@@ -51,7 +51,4 @@ public class PlayerView : MonoBehaviour, IDamagable
         Destroy(this.gameObject);
     }
 
-
-
-
 }
