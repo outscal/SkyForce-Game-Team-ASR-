@@ -17,7 +17,19 @@ public class BulletView : MonoBehaviour
     {
         transform.Translate(0, speed * Time.deltaTime, 0);
     }
-    void OnCollisionEnter2D(Collision2D other)
+    // void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     IDamagable damagable = other.gameObject.GetComponent<IDamagable>();
+    //     if (damagable != null)
+    //     {
+    //         damagable.TakeDamage(/*bulletModel.BulletDamage*/50f);
+    //     }
+    //     else
+    //     {
+    //         Destroy(this.gameObject);
+    //     }
+    // }
+    void OnTriggerEnter2D(Collider2D other)
     {
         IDamagable damagable = other.gameObject.GetComponent<IDamagable>();
         if (damagable != null)
@@ -28,6 +40,7 @@ public class BulletView : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        
     }
 
 }

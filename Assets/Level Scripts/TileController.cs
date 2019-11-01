@@ -14,12 +14,12 @@ public class TileController
     }
     public void SetPosition()
     {
-        currentPosition = TileView.transform.position + new Vector3(0,100f,0f);
+        //currentPosition = TileView.transform.position + new Vector3(0,100f,0f);
     }
 
     public void Disable()
     {
-        TileView.transform.position += new Vector3(0f,70f,0f);
+        TileView.transform.position += new Vector3(0f,50f,0f);
         TileView.Disable();
     }
 

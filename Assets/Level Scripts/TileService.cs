@@ -49,7 +49,7 @@ public class TileService : MonoBehaviour
     {
         TileScriptableObject tileScriptableObject = tileList.tiles[index];
 
-        tileView.transform.position = Vector3.up * spawnPos;
+        tileView.transform.position =  new Vector3(0,spawnPos,2f);
         spawnPos += tileLength;
         Debug.Log("Creating Tank with name: " + tileScriptableObject.TileName);
 

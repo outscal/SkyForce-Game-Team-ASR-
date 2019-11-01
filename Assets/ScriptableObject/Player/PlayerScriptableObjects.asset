@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerName: Plane
   Speed: 10
-  Health: 2000
+  Health: 100
   playerPrefab: {fileID: 1534388882833329701, guid: 1afc21e24a5374f469b44aa2e8f73bd7,
     type: 3}
