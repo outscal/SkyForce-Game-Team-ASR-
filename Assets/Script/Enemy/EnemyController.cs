@@ -39,12 +39,13 @@ namespace SkyForce.Enemy
             {
                 //play a destroy particle effect or anim
                 //EnemyView.OnDeath();
-                EventServices.InitializeKillCounter();            
+                EventServices.InitializeKillCounter();
                 EnemyObjectPooler.Instance.ReturnItemToPool(this);
                 explode = GameObject.Instantiate(EnemyView.explosion);
                 explode.transform.position = EnemyView.transform.position;
                 EnemyView.DestroyThisObject(explode, .5f);
-                EnemyView.PlayDeadAudio();             
+                EnemyView.PlayDeadAudio();
+                EnemyView.gameObject.SetActive(false);
             }
         }
     }

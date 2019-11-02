@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/AdarshScene.unity
+    path: Assets/Scenes/LevelIntegration.unity
     guid: 00222407633115a44a6b798e24a3cc3c
   m_configObjects: {}
