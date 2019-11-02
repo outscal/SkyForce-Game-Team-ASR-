@@ -11,29 +11,6 @@ namespace SkyForce.Player
         [SerializeField]
         private PlayerView playerView;
 
-<<<<<<< HEAD
-        [SerializeField]
-        private PlayerController playerController;
-        void Start()
-        {
-            // GameObject.Instantiate<PlayerView>(playerView,new Vector3 (-1f,3.59822f,0f),Quaternion.identity);
-            playerView = playerScriptableObjectList.player[0].playerPrefab;
-            PlayerModel model = new PlayerModel(playerScriptableObjectList.player[0]);
-            playerController = new PlayerController(model, playerView);
-
-        }
-        void Update()
-        {
-
-            transform.Translate(Vector3.up * Time.deltaTime, Space.World);
-        }
-        public void SetPosition(float xPos, float yPos, float zPos)
-        {
-            playerController.SetPosition(xPos, yPos, zPos);
-        }
-    }
-
-=======
     [SerializeField]
     private PlayerController playerController;
     void Start()
@@ -60,6 +37,6 @@ namespace SkyForce.Player
     // public Vector3 ReturnPlayerPosition (){
     //    return playerController.ReturnPlayerPosition();
     // }
->>>>>>> MainMenu
+}
 }
 

@@ -8,22 +8,13 @@ public class InputHandler_Editor : IInput
     Vector3 target;
     public void ReadInput()
     {
-<<<<<<< HEAD
-        if (Input.GetMouseButton(0))
-            target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-=======
       
       //target = PlayerService.Instance.SetPositionInScreen();
         if(Input.GetMouseButton(0)){
         target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
->>>>>>> MainMenu
         target.z = 0f;
         PlayerService.Instance.SetPosition(target.x, target.y, target.z);
         Debug.Log("Player Service");
-<<<<<<< HEAD
-    }
- 
-=======
         }
         else
         {
@@ -33,6 +24,5 @@ public class InputHandler_Editor : IInput
            PlayerService.Instance.SetPosition(target.x,target.y,target.z);
         }
 }
->>>>>>> MainMenu
 }
 #endif

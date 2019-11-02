@@ -5,12 +5,8 @@ using UnityEngine;
 #if UNITY_ANDROID
 public class InputHandler_Android : IInput
 {
-<<<<<<< HEAD
-    public void ReadInput()
-=======
 Vector3 target;
      public void ReadInput()
->>>>>>> MainMenu
     {
        //target = PlayerService.Instance.SetPositionInScreen();
         if(Input.GetMouseButton(0)){
@@ -18,10 +14,6 @@ Vector3 target;
         target.z = 0f;
         PlayerService.Instance.SetPosition(target.x, target.y, target.z);
         Debug.Log("Player Service");
-<<<<<<< HEAD
-
-    }
-=======
         }
         else
         {
@@ -32,7 +24,6 @@ Vector3 target;
            PlayerService.Instance.SetPosition(target.x,target.y,target.z);
         }
 }
->>>>>>> MainMenu
 }
 
 #endif

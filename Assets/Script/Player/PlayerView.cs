@@ -23,37 +23,6 @@ namespace SkyForce.Player
 #elif UNITY_ANDROID
        controllerInput = new InputHandler_Android();
 #endif
-<<<<<<< HEAD
-        }
-        void Update()
-        {
-            playerController.ObjectBoundWithScreen();
-            Debug.Log("Duck");
-            controllerInput.ReadInput();
-            playerController.GetBullet();
-
-        }
-        public void TakeDamage(float damage)
-        {
-            playerController.ApplyDamage(damage);
-
-        }
-
-        public void Init(PlayerController activeController)
-        {
-            this.playerController = activeController;
-        }
-        public void SetPosition(float xPos, float yPos, float zPos)
-        {
-            transform.position = new Vector3(xPos, yPos, zPos);
-        }
-        public void OnDeath()
-        {
-            Destroy(this.gameObject);
-        }
-
-    }
-=======
     }
     void Update()
     {
@@ -62,7 +31,8 @@ namespace SkyForce.Player
         controllerInput.ReadInput();
         playerController.GetBullet();
         //transform.Translate(0,10,0);
-        transform.Translate(Vector3.up*4.5f*Time.deltaTime);
+      //  transform.Translate(Vector3.up*4.5f*Time.deltaTime);
+      
         
 
     }
@@ -94,5 +64,5 @@ namespace SkyForce.Player
 
 
 
->>>>>>> MainMenu
+}
 }

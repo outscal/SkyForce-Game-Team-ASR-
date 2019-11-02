@@ -17,36 +17,7 @@ namespace SkyForce.Player
         private bool isLoaded;
         private float initialHealth;
 
-<<<<<<< HEAD
         public PlayerController(PlayerModel playerModel, PlayerView playerView)
-=======
-    public PlayerController(PlayerModel playerModel, PlayerView playerView)
-    {
-        PlayerModel = playerModel;
-        PlayerView = GameObject.Instantiate<PlayerView>(playerView, new Vector3(-0.008988857f, 3.59822f, 0f), Quaternion.identity);
-        // PlayerView = playerView;
-        PlayerView.Init(this);
-        isLoaded = true;
-        initialHealth = PlayerModel.Health;
-    }
-    public PlayerModel PlayerModel { get; }
-    public PlayerView PlayerView { get; }
-    public void SetPosition(float xPos,float yPos,float zPos)
-    {
-        PlayerView.SetPosition(xPos,yPos,zPos);
-    }
-    public void ObjectBoundWithScreen()
-    {
-        Debug.Log("Call");
-        PlayerView.transform.position = new Vector3(Mathf.Clamp(PlayerView.transform.position.x, -3.06f, 3.06f),
-                                 Mathf.Clamp(PlayerView.transform.position.y, -5.5f, 5.5f),
-                                 PlayerView.transform.position.z);
-        Debug.Log("Bound");
-    }
-    public void GetBullet()
-    {
-        if (isLoaded == true)
->>>>>>> MainMenu
         {
             PlayerModel = playerModel;
             PlayerView = GameObject.Instantiate<PlayerView>(playerView, new Vector3(-0.008988857f, 3.59822f, 0f), Quaternion.identity);
@@ -65,10 +36,13 @@ namespace SkyForce.Player
         {
             Debug.Log("Call");
             PlayerView.transform.position = new Vector3(Mathf.Clamp(PlayerView.transform.position.x, -3.06f, 3.06f),
-                                     Mathf.Clamp(PlayerView.transform.position.y, -6.18f, 6.18f),
+                                     Mathf.Clamp(PlayerView.transform.position.y, -5.5f, 5.5f),
                                      PlayerView.transform.position.z);
             Debug.Log("Bound");
         }
+
+
+
         public void GetBullet()
         {
             if (isLoaded == true)
@@ -108,8 +82,6 @@ namespace SkyForce.Player
 
         }
 
-<<<<<<< HEAD
-=======
     }
     // public void Move(){
     //     PlayerView.transform.Translate(Vector3.up * 4.5f * Time.deltaTime);
@@ -117,9 +89,8 @@ namespace SkyForce.Player
     // public Vector3 ReturnPlayerPosition(){
     //  return PlayerView.ReturnPosition();
     // }
->>>>>>> MainMenu
-
-    }
 
 }
+
+
 
