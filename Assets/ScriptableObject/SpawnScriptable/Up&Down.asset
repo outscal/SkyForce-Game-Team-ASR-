@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Up&Down
   m_EditorClassIdentifier: 
   EnemyTypeToSpawn: 1
-  EnemyNumber: 10
+  EnemyNumber: 5
   EnemyNoPerWave: 1
   TimeBetweenSpawns: 1
-  ColliderRadius: 2.5
+  ColliderRadius: 10

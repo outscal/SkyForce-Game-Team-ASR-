@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RotatingY
   m_EditorClassIdentifier: 
   EnemyTypeToSpawn: 3
-  EnemyNumber: 15
+  EnemyNumber: 6
   EnemyNoPerWave: 1
   TimeBetweenSpawns: 1
-  ColliderRadius: 3
+  ColliderRadius: 15

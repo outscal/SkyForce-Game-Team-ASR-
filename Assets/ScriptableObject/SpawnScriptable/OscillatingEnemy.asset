@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OscillatingEnemy
   m_EditorClassIdentifier: 
   EnemyTypeToSpawn: 2
-  EnemyNumber: 10
+  EnemyNumber: 8
   EnemyNoPerWave: 1
   TimeBetweenSpawns: 1.5
-  ColliderRadius: 3
+  ColliderRadius: 12

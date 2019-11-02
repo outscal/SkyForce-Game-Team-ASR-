@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OneHitKo
   m_EditorClassIdentifier: 
   EnemyTypeToSpawn: 4
-  EnemyNumber: 5
+  EnemyNumber: 6
   EnemyNoPerWave: 1
   TimeBetweenSpawns: 1
   ColliderRadius: 5

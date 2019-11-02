@@ -6,6 +6,7 @@ namespace SkyForce.Bullet
     public class BulletView : MonoBehaviour
     {
         private BulletModel bulletModel;
+        bool isPierceBullet = false;
         private float speed;
         void Start()
         {
@@ -32,11 +33,14 @@ namespace SkyForce.Bullet
             IDamagable damagable = other.gameObject.GetComponent<IDamagable>();
             if (damagable != null)
             {
-                damagable.TakeDamage(/*bulletModel.BulletDamage*/50f);
+                damagable.TakeDamage(/*bulletModel.BulletDamage*/ 100f);
+                // return bullet to pool when pool implemented
+                if(!isPierceBullet)
+                    Destroy(this.gameObject);
             }
             else
             {
-                Destroy(this.gameObject);
+                Destroy(other.gameObject);
             }
 
         }

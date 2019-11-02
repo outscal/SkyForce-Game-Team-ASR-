@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SimpleEnemy
   m_EditorClassIdentifier: 
   EnemyTypeToSpawn: 0
-  EnemyNumber: 15
+  EnemyNumber: 5
   EnemyNoPerWave: 1
   TimeBetweenSpawns: 0.5
-  ColliderRadius: 3
+  ColliderRadius: 10
