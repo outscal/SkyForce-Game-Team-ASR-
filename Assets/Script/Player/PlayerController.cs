@@ -69,6 +69,9 @@ public class PlayerController
         else
         {
             PlayerView.OnDeath();
+            UIService.Instance.CheckKills();
+           // UIService.Instance.ChangeState(UIState.GameOver);
+            
             //UIService.Instance.HealthBarUpdate(damage/PlayerModel.Health);
             // 1f means death
         }
