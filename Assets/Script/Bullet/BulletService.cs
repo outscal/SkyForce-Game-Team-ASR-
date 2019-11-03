@@ -20,8 +20,6 @@ namespace SkyForce.Bullet
             BulletModel model = new BulletModel(bulletScriptableObjectList.bulletList[0]);
             BulletController bulletController = new BulletController(model, bulletPrefab, BulletPosition);
             return bulletController;
-
-
         }
     }
 

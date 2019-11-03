@@ -1,4 +1,6 @@
-﻿using SkyForce.ObjectPool;
+﻿using System;
+using SkyForce.ObjectPool;
+using SkyForce.Powerups;
 using UnityEngine;
 
 namespace SkyForce.Enemy
@@ -40,13 +42,26 @@ namespace SkyForce.Enemy
                 //play a destroy particle effect or anim
                 //EnemyView.OnDeath();
                 EventServices.InitializeKillCounter();
+                Vector3 enemypos = EnemyView.transform.position;
+                InstantiatePowerUp(enemypos);                
                 EnemyObjectPooler.Instance.ReturnItemToPool(this);
                 explode = GameObject.Instantiate(EnemyView.explosion);
-                explode.transform.position = EnemyView.transform.position;
-                EnemyView.DestroyThisObject(explode, .5f);
+                explode.transform.position = enemypos;
+                EnemyView.DestroyThisObject(explode, .5f);              
                 EnemyView.PlayDeadAudio();
                 EnemyView.gameObject.SetActive(false);
             }
+        }
+
+        private void InstantiatePowerUp(Vector3 pos)
+        {
+            int SpwanProbability = UnityEngine.Random.Range(0, 20);
+            if (SpwanProbability == 1)
+            {
+                int powerupType = UnityEngine.Random.Range(1, 3);
+                //PowerUpType pt = (PowerUpType)Enum.ToObject(typeof(PowerUpType), powerupType);
+                PowerUpService.Instance.GetPowerUp((PowerUpType)powerupType, pos);
+            }            
         }
     }
     
