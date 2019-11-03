@@ -5,8 +5,8 @@ namespace SkyForce.Player
 {
     public class PlayerView : MonoBehaviour, IDamagable
     {
-        [SerializeField]
-        private PlayerModel playerModel;
+        [HideInInspector]
+        public PlayerModel playerModel;
 
         private GameObject playerPrefab;
         [SerializeField]
@@ -27,7 +27,7 @@ namespace SkyForce.Player
     void Update()
     {
         playerController.ObjectBoundWithScreen();
-        Debug.Log("Duck");
+
         controllerInput.ReadInput();
         playerController.GetBullet();
         //transform.Translate(0,10,0);

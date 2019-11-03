@@ -15,6 +15,7 @@ namespace SkyForce.Bullet
         void Update()
         {
             transform.Translate(0, speed * Time.deltaTime, 0);
+            //transform.Translate(transform.forward * speed);
         }
         // void OnCollisionEnter2D(Collision2D other)
         // {

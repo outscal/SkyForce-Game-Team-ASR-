@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85aaaf7d86445444c826fdbb1114b95f, type: 3}
-  m_Name: Bullet
+  m_Script: {fileID: 11500000, guid: fa95567aded5e42439116fbb91710d34, type: 3}
+  m_Name: Health
   m_EditorClassIdentifier: 
-  BulletType: 0
-  BulletName: missile
-  Damage: 10
-  BulletSpeed: 10
-  bulletPrefab: {fileID: -6062901490172043331, guid: 523a2b30a06bab2478f17d39dd907340,
+  PowerUpType: 1
+  PlayerName: 
+  Speed: 10
+  Health: 1000
+  ViewPrefab: {fileID: -7373244728774625260, guid: 3511df21dda14bc4eabe4d71108aed71,
     type: 3}
