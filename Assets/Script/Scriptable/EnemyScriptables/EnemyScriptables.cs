@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SkyForce.Enemy;
+using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyScriptables", menuName = "ScriptableObjects/EnemyScriptables/NewEnemyScriptableObject")]
@@ -8,6 +9,7 @@ public class EnemyScriptables : ScriptableObject
     [Header("Basic")]
     [Space(2)]
     public EnemyType Type;
+    public EnemyView enemyView;
     public float CollideDamage;
     public float Health;
     [Header("Shooting Enemy")]

@@ -23,7 +23,7 @@ namespace SkyForce.Enemy
         Vector3 axisOfRoatation;
         float timer = 0;
         public GameObject explosion;
-        public AudioSource audioSource;
+        AudioSource audioSource;
 
 
         //private EnemyModel Defaultmodel;
@@ -45,7 +45,8 @@ namespace SkyForce.Enemy
         void Start()
         {
             //Defaultmodel = enemyController.EnemyModel;
-            rgbd2D = GetComponent<Rigidbody2D>();
+            rgbd2D = gameObject.GetComponent<Rigidbody2D>();
+            audioSource = gameObject.GetComponent<AudioSource>();
             rgbd2D.gravityScale = enemyController.EnemyModel.GravityScale;
             if (enemyController.EnemyModel.IsRotating)
             {

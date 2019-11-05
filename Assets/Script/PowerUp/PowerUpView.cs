@@ -1,6 +1,4 @@
 ﻿using SkyForce.Player;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SkyForce.Powerups
@@ -18,11 +16,12 @@ namespace SkyForce.Powerups
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            PlayerView playerView = collision.GetComponent<PlayerView>();
+            PlayerView playerView = null;
+            playerView = collision.GetComponent<PlayerView>();
             if (playerView != null)
             {
                 playerView.playerModel = ModelToSet;
-                Destroy(this);
+                Destroy(this.gameObject);
             }
         }
     }

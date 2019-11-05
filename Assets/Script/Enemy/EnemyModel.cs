@@ -2,6 +2,7 @@
 {
     public class EnemyModel
     {
+        public EnemyView enemyView;
         public EnemyType Type;
         public bool IsShooting;
         public bool ChangeMovement;
@@ -20,6 +21,7 @@
 
         public EnemyModel(EnemyScriptables enemyScriptables)
         {
+            enemyView = enemyScriptables.enemyView;
             Type = enemyScriptables.Type;
             IsShooting = enemyScriptables.IsShooting;
             ChangeMovement = enemyScriptables.ChangeMovement;
