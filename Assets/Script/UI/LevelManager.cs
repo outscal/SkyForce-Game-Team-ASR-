@@ -30,4 +30,12 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(level);
     }
+    public void ResetLevels(){
+        int levelsButtonCount = transform.childCount;
+        for (int i = 1; i < levelsButtonCount; i++)
+        {
+            transform.GetChild(i).GetComponent<Button>().interactable = false;
+        }
+        PlayerPrefs.DeleteAll();
+    }
 }

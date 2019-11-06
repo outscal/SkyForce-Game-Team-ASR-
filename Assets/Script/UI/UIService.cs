@@ -19,11 +19,13 @@ public class UIService : MonoSingletonGeneric<UIService>
     {
 
         gameView = healthBar.GetComponentInParent<GameView>();
+        gameView = GetComponentInChildren<GameView>();
         killText = GetComponentInChildren<Text>();
         EventServices.KillCounter += callKillCounter;
-        gameOver = gameOverScreen.GetComponentInParent<GameOver>();
+        // gameOver = gameOverScreen.GetComponentInParent<GameOver>();
+        gameOver = GetComponentInChildren<GameOver>();
         ChangeState(UIState.Gameview);
-     
+
 
     }
     void update()
@@ -36,14 +38,17 @@ public class UIService : MonoSingletonGeneric<UIService>
         gameView.HandleBar(damage);
         Debug.Log("Step3");
     }
-    public void CheckKills(){
-        if(gameView.kill <3 ){
+    public void CheckKills()
+    {
+        if (gameView.kill < 3)
+        {
             Debug.Log("Gameover ui");
             gameOverScreen_Loose.SetActive(true);
-            }
-            else {
-                UpdateStars();
-            }
+        }
+        else
+        {
+            UpdateStars();
+        }
     }
     public void UpdateStars()
     {
@@ -51,7 +56,7 @@ public class UIService : MonoSingletonGeneric<UIService>
         Debug.Log("dkills = " + gameView.kill);
         gameOverScreen.SetActive(true);
         gameOver.SetStar(gameView.kill);
-        
+
 
     }
     private void callKillCounter()
