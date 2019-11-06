@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: EnemyType1
   m_EditorClassIdentifier: 
   Type: 1
+  enemyView: {fileID: 2473520926681778579, guid: e8782745238abd34ba346fa9f352016f,
+    type: 3}
   CollideDamage: 20
   Health: 100
   IsShooting: 0
