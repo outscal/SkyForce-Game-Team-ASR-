@@ -5,6 +5,14 @@ namespace SkyForce.Player
 {
     public class PlayerView : MonoBehaviour, IDamagable
     {
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            ICollectable collectobj = collision.gameObject.GetComponent<ICollectable>();
+            if(collectobj != null)
+            {
+                collectobj.OnCollect(gameObject);
+            }
+        }
         [HideInInspector]
         public PlayerModel playerModel;
 

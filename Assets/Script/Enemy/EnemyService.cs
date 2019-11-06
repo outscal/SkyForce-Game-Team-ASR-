@@ -33,7 +33,7 @@ namespace SkyForce.Enemy
         public EnemyController GetEnemyController(EnemyType enemyType)
         {
             EnemyModel enemyModel = GetEnemyModels(enemyType);
-            EnemyController controller = EnemyObjectPooler.Instance.GetComponent<EnemyObjectPooler>().GetEnemyController(enemyView, enemyModel);
+            EnemyController controller = EnemyObjectPooler.Instance.GetComponent<EnemyObjectPooler>().GetEnemyController(enemyModel.enemyView, enemyModel);
             return controller;
         }
 

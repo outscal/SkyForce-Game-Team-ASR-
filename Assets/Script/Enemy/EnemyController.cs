@@ -13,7 +13,7 @@ namespace SkyForce.Enemy
         GameObject explode;
         public EnemyController(EnemyView enemyView,EnemyModel enemyModel)
         {
-            EnemyView = GameObject.Instantiate<EnemyView>(EnemyModel.enemyView);
+            EnemyView = GameObject.Instantiate<EnemyView>(enemyView);
             EnemyModel = enemyModel;
             SpawnPos = EnemyView.transform.position;
             EnemyView.SetController(this);
