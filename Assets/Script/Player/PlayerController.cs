@@ -68,7 +68,7 @@ public class PlayerController
             }
         else
         {
-            PlayerView.OnDeath();
+           // PlayerView.OnDeath();
             UIService.Instance.CheckKills();
            // UIService.Instance.ChangeState(UIState.GameOver);
             

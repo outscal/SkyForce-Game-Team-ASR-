@@ -18,7 +18,7 @@ public class UIService : MonoSingletonGeneric<UIService>
     private void Start()
     {
 
-        gameView = healthBar.GetComponentInParent<GameView>();
+       // gameView = healthBar.GetComponentInParent<GameView>();
         gameView = GetComponentInChildren<GameView>();
         killText = GetComponentInChildren<Text>();
         EventServices.KillCounter += callKillCounter;
